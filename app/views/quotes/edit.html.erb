@@ -1,0 +1,7 @@
+<%= link_to sanitize("&larr; Back to quote"), quote_path(@quote) %>
+
+<h1>Edit quote</h1>
+
+<%= turbo_frame_tag @quote do %>
+  <%= render "form", quote: @quote %>
+<% end %>

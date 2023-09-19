@@ -1,0 +1,19 @@
+<%= turbo_frame_tag quote do %>
+
+  <div class="block w-full mt-4">
+    <%= link_to quote.name, 
+                quote_path(quote),
+                data: { turbo_frame: "_top" } %>
+
+    <div class="block mt-2 flex space-x-4">
+      <%= button_to "Delete",
+                    quote_path(quote),
+                    method: :delete,
+                    class: "text-red",
+                    data: { turbo_frame: "_top" } %>
+      <%= link_to "Edit",
+                  edit_quote_path(quote),
+                  class: "text-green" %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+<%= form_with model: quote, local: true, html: { class: "quote form" } do |form| %>
+  <% if quote.errors.any? %>
+    <div class="error-message">
+      <%= quote.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, autofocus: true, class: "w-full" %>
+  </div>
+
+  <%= link_to "Cancel", quotes_path, class: "underline" %>
+
+  <%= form.submit "Submit" %>
+<% end %>

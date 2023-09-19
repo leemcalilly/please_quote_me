@@ -1,0 +1,16 @@
+<%= turbo_stream_from "quotes" %>
+
+<h1>Quotes</h1>
+
+<%= link_to "New quote", 
+    new_quote_path, 
+    class: "underline",
+    data: { turbo_frame: dom_id(Quote.new) } %>
+
+<%= turbo_frame_tag Quote.new %>
+
+<%= turbo_frame_tag "quotes" do %>
+  <div class="block w-full mt-12">
+    <%= render @quotes %>
+  </div>
+<% end %>
