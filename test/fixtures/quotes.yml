@@ -1,8 +1,11 @@
 first:
+  account: kpmg
   name: First quote
 
 second:
+  account: kpmg
   name: Second quote
 
 third:
+  account: kpmg
   name: Third quote
