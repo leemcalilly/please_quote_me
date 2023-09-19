@@ -1,4 +1,4 @@
-<%= turbo_stream_from "quotes" %>
+<%= turbo_stream_from current_account, "quotes" %>
 
 <h1>Quotes</h1>
 
@@ -7,10 +7,12 @@
     class: "underline",
     data: { turbo_frame: dom_id(Quote.new) } %>
 
-<%= turbo_frame_tag Quote.new %>
+<%= turbo_frame_tag Quote.new do %>
+  <% if @quotes.none? %>
+    <%= render "quotes/empty_state" %>
+  <% end %>
+<% end %>
 
 <%= turbo_frame_tag "quotes" do %>
-  <div class="block w-full mt-12">
-    <%= render @quotes %>
-  </div>
+  <%= render @quotes %>
 <% end %>
