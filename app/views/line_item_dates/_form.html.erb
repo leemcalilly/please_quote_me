@@ -1,0 +1,10 @@
+<%= form_with(model: [quote, line_item_date], local: true, html: { class: "w-full" }) do |form| %>
+  <%= form_error_notification(line_item_date) %>
+  <div>
+    <%= form.label :date %>
+    <%= form.date_field :date, autofocus: true %>
+  </div>
+
+  <%= link_to "Cancel", quote_path(quote), class: "underline" %>
+  <%= form.submit "Submit", class: "block" %>
+<% end %>

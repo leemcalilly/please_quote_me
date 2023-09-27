@@ -9,11 +9,11 @@
       <%= button_to "Delete",
                     quote_path(quote),
                     method: :delete,
-                    class: "text-red",
+                    class: "block",
                     data: { turbo_frame: "_top" } %>
       <%= link_to "Edit",
                   edit_quote_path(quote),
-                  class: "text-green" %>
+                  class: "underline" %>
     </div>
   </div>
 <% end %>
